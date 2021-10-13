@@ -71,13 +71,13 @@ class App(tk.Tk):
     def getShape(self):
         self.canvas.pack(expand=YES, fill=BOTH)
         if (self.varStringShape.get() == 'circle'): 
-            self.canvas.create_oval(10, 10, 290, 290, fill=self.colorCode[self.currentColor],tags='shape')
+            self.canvas.create_oval(10, 10, 290, 290, fill=self.colorCode[self.currentColor], outline=self.colorCode[self.currentColor],tags='shape')
         
         elif (self.varStringShape.get() == 'triangle'): 
-            self.canvas.create_rectangle(10, 10, 290, 290, fill=self.colorCode[self.currentColor], tags='shape')
+            self.canvas.create_rectangle(10, 10, 290, 290, fill=self.colorCode[self.currentColor], outline=self.colorCode[self.currentColor], tags='shape')
         
         else:
-            self.canvas.create_polygon((0, 290, 150, 0, 290, 290), fill=self.colorCode[self.currentColor], tags='shape')
+            self.canvas.create_polygon((0, 290, 150, 0, 290, 290), fill=self.colorCode[self.currentColor], outline=self.colorCode[self.currentColor], tags='shape')
 
 
     def reShape(self):
